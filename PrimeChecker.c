@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include <ctype.h>
 #include <limits.h>
 #include <unistd.h>
@@ -10,8 +11,7 @@
 // #define ULL unsigned long long
 
 void printUsage(void);
-/*bool isPrime(ULL num);
-ULL getInput(void);
+/*ULL getInput(void);
 char* getInput(void);
 ULL parseInput(char* numstr);
 */
@@ -72,7 +72,7 @@ int main(int argc, char* argv[]){
 }
 
 bool is_prime(int num){
-	for (int i = 2; i * i <= num; ++i){
+	for (int i = 2; i <= (int)sqrt(num) + 1; ++i){
 		if (num % i == 0){
 			return false;
 		}
@@ -82,13 +82,6 @@ bool is_prime(int num){
 
 
 /*
-bool isPrime(ULL num){
-	for(ULL i = 2; i * i <= num; i++)
-		if(num % i == 0)
-			return false;
-	return true;
-}
-
 ULL getInput(void){
 	char buffer[BUFFER_SIZE];
 

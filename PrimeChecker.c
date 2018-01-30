@@ -22,7 +22,18 @@ bool is_prime(int num);
 int main(int argc, char* argv[]){
 
 	if(argc == 1){
-		//use unsigned long long
+		//use int, Read Evaluation Print Loop
+		while (true){
+			int input = 0; 
+			scanf("%d", &input);
+
+			if (input < 2){
+				printf("Input is too small. Try again\n");
+				continue;
+			}
+
+			printf("%d is %s a prime number", input, (is_prime(input)) ? "" : "not");
+		}
 	}else{
 		int c;
 		char* snum;
